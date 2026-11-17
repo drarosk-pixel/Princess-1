@@ -137,3 +137,7 @@ body.leaving .page{animation:pageOut .5s ease forwards;}
 @keyframes spk{0%{transform:scale(0) rotate(0);opacity:1;}100%{transform:scale(1.4) rotate(40deg) translateY(-26px);opacity:0;}}
 .confetti{position:fixed;width:9px;height:9px;top:-20px;pointer-events:none;z-index:100001;border-radius:2px;animation:cf linear forwards;}
 @keyframes cf{0%{transform:translateY(0) rotate(0) translateX(0);opacity:1;}100%{transform:translateY(110vh) rotate(720deg) translateX(var(--cx));opacity:0;}}
+
+/* ===== single-page screens ===== */
+.screen{display:none;}
+.screen.show{display:block;animation:pageIn .7s ease;}

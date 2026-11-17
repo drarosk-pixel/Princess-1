@@ -10,7 +10,7 @@
 <body>
 <div class="bg-soft"></div>
 
-<!-- background song: apna gaana song.mp3 naam se isi folder me rakhna -->
+<!-- background song — single audio, starts on Enter, never reloads -->
 <audio id="aud" loop preload="auto"><source src="song.mp3" type="audio/mpeg"></audio>
 
 <!-- page dots -->
@@ -18,22 +18,126 @@
   <a class="on"></a><a></a><a></a><a></a>
 </div>
 
-<div class="page">
-  <section class="cover">
-    <div class="crown">👑</div>
-    <div class="badge">happy princess day</div>
+<div id="app">
 
-    <div class="photo-heart">
-      <img src="images/dp.jpg" alt="" onerror="this.outerHTML='<div class=\'ph\'>👸</div>'">
+  <!-- ===== SCREEN 0 · COVER ===== -->
+  <div class="screen show">
+    <section class="cover">
+      <div class="crown">👑</div>
+      <div class="badge">happy princess day</div>
+
+      <div class="photo-heart">
+        <img src="images/dp.jpg" alt="" onerror="this.outerHTML='<div class=\'ph\'>👸</div>'">
+      </div>
+
+      <h1>for my <em>princess</em></h1>
+      <p class="sub">ek chhoti si duniya, jo sirf tumhare liye banayi hai 🌸</p>
+
+      <div style="margin-top:2.4rem;">
+        <button class="btn" onclick="enterSite()">Enter 💕</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== SCREEN 1 · OUR STORY ===== -->
+  <div class="screen">
+    <div class="wrap">
+      <div class="pagehead">
+        <div class="kicker">page two</div>
+        <div class="h-script">our little <em>story</em> 🤍</div>
+      </div>
+
+      <div class="scrap">
+        <div class="poly rev"><div class="pic"><img src="images/s1.jpg" alt="" onerror="this.parentNode.textContent='🥹'"></div><div class="cap">jahan bhi hoon, tumhe dhoondta hoon</div></div>
+        <div class="poly rev"><div class="pic"><img src="images/s2.jpg" alt="" onerror="this.parentNode.textContent='🍽️'"></div><div class="cap">dekho tum isme kitni badiya lag rahi ho</div></div>
+        <div class="poly rev"><div class="pic"><img src="images/s3.jpg" alt="" onerror="this.parentNode.textContent='🥰'"></div><div class="cap">yahi sukoon chahiye bas, zindagi bhar</div></div>
+        <div class="poly rev"><div class="pic"><img src="images/s4.jpg" alt="" onerror="this.parentNode.textContent='🫶'"></div><div class="cap">tumhari care karna zindagi me kabhi nahi chhodunga</div></div>
+        <div class="poly rev"><div class="pic"><img src="images/s5.jpg" alt="" onerror="this.parentNode.textContent='🤗'"></div><div class="cap">We are perfect ❤️</div></div>
+        <div class="poly rev"><div class="pic"><img src="images/s6.jpg" alt="" onerror="this.parentNode.textContent='💕'"></div><div class="cap">Meri princess 😚</div></div>
+        <div class="poly rev"><div class="pic"><img src="images/s7.jpg" alt="" onerror="this.parentNode.textContent='📸'"></div><div class="cap">Forever Grateful ❤️</div></div>
+      </div>
+
+      <div class="pagenav">
+        <button class="btn ghost" onclick="go(0)">← back</button>
+        <button class="btn" onclick="go(2)">next 💕</button>
+      </div>
     </div>
+  </div>
 
-    <h1>for my <em>princess</em></h1>
-    <p class="sub">ek chhoti si duniya, jo sirf tumhare liye banayi hai 🌸</p>
+  <!-- ===== SCREEN 2 · MY PRINCESS GALLERY ===== -->
+  <div class="screen">
+    <div class="wrap">
+      <div class="pagehead">
+        <div class="kicker">page three</div>
+        <div class="h-script">my princess <em>gallery</em> 👑</div>
+      </div>
 
-    <div style="margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
-      <a class="btn" href="story.html" onclick="event.preventDefault();startMusicAndGo('story.html')">Enter 💕</a>
+      <div class="reasons">
+        <div class="rcard rev"><div class="rpic"><img src="images/r1.jpg" alt="" onerror="this.parentNode.textContent='🌸'"></div><div class="rtxt"><div class="n">one</div><div class="t">tum bahut pehle se hi princess thi, bas tum mujhe baad me mili.</div></div></div>
+        <div class="rcard rev"><div class="rpic"><img src="images/r2.jpg" alt="" onerror="this.parentNode.textContent='🤓'"></div><div class="rtxt"><div class="n">two</div><div class="t">nerd bhi, pari bhi — dono ek saath kaise?</div></div></div>
+        <div class="rcard rev"><div class="rpic"><img src="images/r3.jpg" alt="" onerror="this.parentNode.textContent='💐'"></div><div class="rtxt"><div class="n">three</div><div class="t">phoolon se zyada tum pyaari lag rahi ho.</div></div></div>
+        <div class="rcard rev"><div class="rpic"><img src="images/r4.jpg" alt="" onerror="this.parentNode.textContent='✨'"></div><div class="rtxt"><div class="n">four</div><div class="t">jab tum sajti ho na, hamesha pighal jaata hoon 🫠</div></div></div>
+        <div class="rcard rev"><div class="rpic"><img src="images/r5.jpg" alt="" onerror="this.parentNode.textContent='🥺'"></div><div class="rtxt"><div class="n">five</div><div class="t">ye nakhre, ye aankhen — meri puri duniya.</div></div></div>
+        <div class="rcard rev"><div class="rpic"><img src="images/r6.jpg" alt="" onerror="this.parentNode.textContent='💗'"></div><div class="rtxt"><div class="n">six</div><div class="t">bheed me bhi, peeche se bhi, pehchaan lu tumhe.</div></div></div>
+      </div>
+
+      <div class="pagenav">
+        <button class="btn ghost" onclick="go(1)">← back</button>
+        <button class="btn" onclick="go(3)">one last thing 🎁</button>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- ===== SCREEN 3 · GIFT ===== -->
+  <div class="screen">
+    <section class="gift-screen">
+      <div class="pagehead">
+        <div class="kicker">page four</div>
+        <div class="h-script" style="font-size:clamp(2rem,7vw,3.2rem);">one last <em>thing</em>...</div>
+      </div>
+
+      <div class="gift-box">
+        <div class="gift-locked" id="giftLocked" onclick="openGift()">
+          <span class="em">🎁</span>
+          <div class="hint">tumhare liye ek aakhri message</div>
+          <div class="tap">tap to open</div>
+        </div>
+
+        <div class="gift-reveal" id="giftReveal">
+          <div class="pb-strip">
+            <img src="images/polaroid.jpg" alt="" onerror="this.outerHTML='<div class=\'pb-ph\'>📸<br><span>polaroid.jpg<br>yahan aayegi</span></div>'">
+            <div class="pb-cap">us 🤍</div>
+          </div>
+
+          <div class="anni-title">Happy 10-Month Anniversary, Babe! ❤️😚</div>
+          <div class="mtext" id="anniMsg">Finally, the day has come when we've reached double digits! ❤️ After so many fights, countless beautiful moments, endless love, and everything we've been through together, here we are, still choosing each other. ❤️
+
+First of all, I want to say I'm truly sorry for every single moment I made you cry. I know that sometimes, during our fights, I say things without even thinking about how much they might hurt you. Please forgive me for all those moments, my love. I never came into your life to bring you sadness. I came into your life to make you happy, to love you, to care for you, and to be the reason behind your beautiful smile. ❤️
+
+I promise you, my love, that I'll do my best to never repeat those mistakes again. Your man loves you more than words could ever explain, more than you could ever imagine, and far beyond any limits. ❤️♾️
+
+We still have such a long and beautiful journey ahead of us, and I want to experience every little moment of it with you. I want to grow with you, laugh with you, overcome every difficulty together, and create countless memories by your side. 🫂❤️
+
+I want you in my life until my very last breath. I'll keep loving you until my eyes close for the last time and my heart beats its final beat. No matter what life brings our way, my love for you will always remain. ❤️
+
+All I ever want is to see you happy, smiling, and feeling loved every single day. Your happiness means everything to me, princess. 👸🏼
+
+I'm endlessly grateful to have you in my life. You're not just my girlfriend; you're my happiness, my comfort, my safe place, and one of the most beautiful blessings life has ever given me. ❤️
+
+I love you sooooo much, my baby, my princess, my everything! 😘😘😘❤️
+
+Happy 10 months of us, my love! ❤️ Here's to forever together, because 10 months is just the beginning of our beautiful love story. 💍❤️♾️</div>
+          <div class="msig">— yours, always ❤️♾️</div>
+        </div>
+      </div>
+
+      <div class="pagenav">
+        <button class="btn ghost" onclick="go(2)">← back</button>
+        <button class="btn" onclick="go(0)">start over 🔁</button>
+      </div>
+    </section>
+  </div>
+
 </div>
 
 <div id="mbar"><div class="disc"></div><div class="sname">tap to play 🎵</div></div>
