@@ -117,8 +117,9 @@ body.leaving .page{animation:pageOut .5s ease forwards;}
 .pb-strip .pb-ph{aspect-ratio:1/3;background:var(--blush);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2.4rem;color:var(--deeprose);}
 .pb-strip .pb-ph span{font-size:.58rem;letter-spacing:.1em;margin-top:.5rem;line-height:1.5;}
 .pb-strip .pb-cap{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:'Dancing Script',cursive;font-size:1rem;color:var(--soft);}
-.gift-reveal .mtext{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;line-height:2;color:var(--text);white-space:pre-wrap;}
-.gift-reveal .msig{margin-top:1.6rem;font-family:'Dancing Script',cursive;font-size:1.4rem;color:var(--deeprose);}
+.gift-reveal .anni-title{font-family:'Dancing Script',cursive;font-size:clamp(1.8rem,6vw,2.6rem);color:var(--deeprose);margin-bottom:1.2rem;line-height:1.2;}
+.gift-reveal .mtext{font-family:'Cormorant Garamond',serif;font-size:1.08rem;line-height:1.85;color:var(--text);white-space:pre-wrap;text-align:left;}
+.gift-reveal .msig{margin-top:1.6rem;font-family:'Dancing Script',cursive;font-size:1.5rem;color:var(--deeprose);text-align:right;}
 
 /* ===== music bar ===== */
 #mbar{position:fixed;bottom:1.2rem;right:1.2rem;z-index:120;display:flex;align-items:center;gap:.55rem;
