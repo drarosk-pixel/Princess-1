@@ -1,35 +1,46 @@
 # Princess 👑
 
-Happy Princess Day — ek playful Instagram-style website.
+Happy Princess Day — ek cute 4-page website.
 
-Site khol'ne ke liye: `index.html` ko browser me double-click karo.
+Kholne ke liye: `index.html` ko browser me double-click karo. Pages: **cover → our story → why you're my princess → one last gift**. Niche "next / back" buttons se chalega, music continue rahega.
 
-## Photos kahan daalni hain
+## Photos — `images/` folder me ye naam se save karo (bilkul yahi, chhote akshar, `.jpg`)
 
-Sab photos `images/` folder me, neeche diye naam se save karo (bilkul yahi naam, chhote akshar, `.jpg`):
+**Cover**
+| file | photo |
+|------|-------|
+| `images/dp.jpg` | close-up selfie, gold necklace wali (sabse pyaari face shot) |
 
-| file | kaunsi photo | kahan dikhegi |
-|------|--------------|---------------|
-| `images/dp.jpg` | close-up selfie, gold necklace wali | profile photo (round) |
-| `images/g1.jpg` | dono white shirt me paas-paas smile | grid #1 (pinned) |
-| `images/g2.jpg` | red dungaree + haath chehre pe | grid #2 |
-| `images/g3.jpg` | restaurant / brick wall date selfie | grid #3 |
-| `images/g4.jpg` | glasses + flower filter, do choti | grid #4 |
-| `images/g5.jpg` | bouquet gaal se laga ke | grid #5 |
-| `images/g6.jpg` | gaal se gaal, letे hue sukoon wali | grid #6 |
-| `images/g7.jpg` | saree (blue + red) wali | grid #7 |
-| `images/g8.jpg` | car me haath pakde, pair dashboard pe | grid #8 |
-| `images/g9.jpg` | orange wall pe hug | grid #9 |
-| `images/polaroid.jpg` | Timezone photobooth strip (3 frame) | **sabse end me, 10-month message ke upar** |
+**Page 2 — Our Story (tum dono)**
+| file | photo |
+|------|-------|
+| `images/s1.jpg` | dono white shirt me paas-paas smile |
+| `images/s2.jpg` | restaurant / brick wall date selfie |
+| `images/s3.jpg` | gaal se gaal laga ke, sukoon wali |
+| `images/s4.jpg` | car me haath pakde, pair dashboard pe |
+| `images/s5.jpg` | orange wall pe hug |
+| `images/s6.jpg` | doosri close/intimate wali (ya koi aur couple pic) |
 
-> Tip: saree aur orange wall wali photos seedha (upright) karke save karna, warna grid me tedhi dikhengi.
-> Photo na ho to tootega kuch nahi — uski jagah cute emoji placeholder dikhega.
+**Page 3 — Why You're My Princess (uski solo)**
+| file | photo |
+|------|-------|
+| `images/r1.jpg` | red dungaree + haath chehre pe |
+| `images/r2.jpg` | glasses + flower snapchat filter, do choti |
+| `images/r3.jpg` | bouquet gaal se laga ke |
+| `images/r4.jpg` | saree (blue + red) wali |
+| `images/r5.jpg` | badi aankhon wali pout selfie |
+| `images/r6.jpg` | peeche se braid wali candid |
 
-## Gaana (background music)
+**Page 4 — One Last Gift**
+| file | photo |
+|------|-------|
+| `images/polaroid.jpg` | Timezone photobooth strip (3 frame) — gift ke andar |
 
-Apna gaana `song.mp3` naam se `index.html` ke bagal me (root me) rakho. Bottom-right disc tap karne pe bajega.
-(Browser rule: pehli tap ke baad hi music chalega, autoplay block hota hai.)
+> Tedhi (rotated) photos — saree, orange wall — seedha karke save karna.
+> Photo na ho to tootega kuch nahi, cute emoji placeholder dikhega.
+
+## Gaana
+`song.mp3` naam se is folder (root) me rakho. Cover ke **Enter** button ya bottom-right disc tap pe bajega aur pages ke beech continue rahega.
 
 ## 10-month anniversary message
-
-`index.html` me `giftReveal` ke andar `mtext` wali line me apna message daal do — wo `🎁` locked box ke andar, polaroid ke neeche dikhta hai.
+`gift.html` me `id="anniMsg"` wali line me apna message daalo — wo 🎁 locked box ke andar, polaroid ke neeche dikhta hai.

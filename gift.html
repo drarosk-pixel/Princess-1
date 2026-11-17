@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Gift 🎁</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-soft"></div>
+<audio id="aud" loop><source src="song.mp3" type="audio/mpeg"></audio>
+
+<div class="dots"><a></a><a></a><a></a><a class="on"></a></div>
+
+<div class="page">
+  <section class="gift-screen">
+    <div class="pagehead">
+      <div class="kicker">page four</div>
+      <div class="h-script" style="font-size:clamp(2rem,7vw,3.2rem);">one last <em>thing</em>...</div>
+    </div>
+
+    <div class="gift-box">
+      <!-- locked state -->
+      <div class="gift-locked" id="giftLocked" onclick="openGift()">
+        <span class="em">🎁</span>
+        <div class="hint">tere liye ek aakhri gift</div>
+        <div class="tap">tap to open</div>
+      </div>
+
+      <!-- revealed -->
+      <div class="gift-reveal" id="giftReveal">
+        <!-- POLAROID: Timezone photobooth strip -> images/polaroid.jpg -->
+        <div class="pb-strip">
+          <img src="images/polaroid.jpg" alt="" onerror="this.outerHTML='<div class=\'pb-ph\'>📸<br><span>polaroid.jpg<br>yahan aayegi</span></div>'">
+          <div class="pb-cap">us 🤍</div>
+        </div>
+
+        <!-- ===== 10 MONTH ANNIVERSARY MESSAGE yahan aayega (abhi placeholder) ===== -->
+        <div class="mtext" id="anniMsg">[ 10 months anniversary message yahan aayega 💕 ]</div>
+        <div class="msig">— yours, always</div>
+      </div>
+    </div>
+
+    <div class="pagenav">
+      <a class="btn ghost" href="reasons.html" data-nav>← back</a>
+      <a class="btn" href="index.html" data-nav>start over 🔁</a>
+    </div>
+  </section>
+</div>
+
+<div id="mbar"><div class="disc"></div><div class="sname">tap to play 🎵</div></div>
+<script src="app.js"></script>
+<script>
+function openGift(){
+  document.getElementById('giftLocked').style.display='none';
+  document.getElementById('giftReveal').classList.add('on');
+  confetti(60);
+}
+</script>
+</body>
+</html>

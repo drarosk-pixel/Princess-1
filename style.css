@@ -1,0 +1,138 @@
+/* ===== Princess — shared cute theme ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --rose:#e8a0b4;--deeprose:#c2607a;--blush:#fce4ec;
+  --cream:#fff8f5;--text:#4a2030;--soft:#8a5060;--gold:#e9c46a;
+}
+html{scroll-behavior:smooth;}
+body{
+  min-height:100vh;background:var(--cream);color:var(--text);
+  font-family:'Montserrat',sans-serif;overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;position:relative;
+}
+img{user-select:none;-webkit-user-drag:none;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:var(--rose);border-radius:10px;}
+
+/* page fade transition */
+.page{opacity:0;animation:pageIn .9s ease forwards;}
+body.leaving .page{animation:pageOut .5s ease forwards;}
+@keyframes pageIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+@keyframes pageOut{from{opacity:1;}to{opacity:0;transform:translateY(-18px);}}
+
+/* soft romantic bg per page */
+.bg-soft{position:fixed;inset:0;z-index:-2;
+  background:radial-gradient(ellipse at 50% 0%,#fce4ec 0%,#fff8f5 60%);}
+
+/* ===== headings ===== */
+.kicker{font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rose);text-align:center;}
+.h-script{font-family:'Dancing Script',cursive;color:var(--text);text-align:center;line-height:1.15;}
+.h-script em{color:var(--deeprose);font-style:normal;}
+
+/* ===== buttons / nav ===== */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:linear-gradient(135deg,var(--deeprose),#a84060);color:#fff;
+  border:none;border-radius:50px;padding:.85rem 2.2rem;
+  font-family:'Montserrat';font-size:.9rem;letter-spacing:.12em;
+  cursor:pointer;text-decoration:none;
+  box-shadow:0 8px 26px rgba(194,96,122,.4);transition:transform .25s,box-shadow .25s;
+}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 34px rgba(194,96,122,.5);}
+.btn:active{transform:scale(.97);}
+.btn.ghost{background:transparent;color:var(--deeprose);border:1.5px solid var(--rose);box-shadow:none;}
+
+.pagenav{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;padding:2.5rem 1rem 3.5rem;}
+
+/* dots indicator */
+.dots{position:fixed;top:1rem;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;z-index:40;}
+.dots a{width:9px;height:9px;border-radius:50%;background:var(--blush);border:1.5px solid var(--rose);transition:all .3s;}
+.dots a.on{background:var(--deeprose);transform:scale(1.35);}
+
+/* ===== cover (page 1) ===== */
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;}
+.cover .crown{font-size:3.4rem;animation:bobble 2.4s ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(194,96,122,.3));}
+@keyframes bobble{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-10px) rotate(5deg);}}
+.cover .badge{margin-top:1rem;background:rgba(232,160,180,.2);border:1px solid var(--rose);border-radius:50px;padding:.4rem 1.2rem;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--deeprose);}
+.cover h1{font-family:'Dancing Script',cursive;font-size:clamp(3rem,13vw,6.5rem);color:var(--text);margin:.6rem 0 .2rem;line-height:1.05;}
+.cover h1 em{color:var(--deeprose);font-style:normal;}
+.cover .sub{font-style:italic;color:var(--soft);font-family:'Cormorant Garamond',serif;font-size:1.2rem;}
+.cover .photo-heart{margin:2rem 0 2.2rem;width:170px;height:170px;border-radius:50%;padding:5px;background:linear-gradient(45deg,var(--gold),var(--deeprose),var(--rose));box-shadow:0 16px 45px rgba(194,96,122,.3);}
+.cover .photo-heart img,.cover .photo-heart .ph{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--cream);background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:3.5rem;}
+
+/* ===== section wrap ===== */
+.wrap{max-width:620px;margin:0 auto;padding:3.5rem 1.3rem 1rem;}
+.pagehead{text-align:center;margin-bottom:2.5rem;}
+.pagehead .h-script{font-size:clamp(2.2rem,8vw,3.6rem);margin-top:.3rem;}
+
+/* ===== polaroid scrapbook (story) ===== */
+.scrap{display:flex;flex-direction:column;gap:3rem;}
+.poly{
+  background:#fff;padding:14px 14px 50px;border-radius:3px;
+  box-shadow:0 14px 45px rgba(194,96,122,.22);align-self:center;
+  max-width:340px;width:100%;position:relative;transition:transform .4s ease;
+}
+.poly:hover{transform:rotate(0deg) scale(1.02)!important;box-shadow:0 20px 55px rgba(194,96,122,.3);}
+.poly:nth-child(odd){transform:rotate(-2.2deg);}
+.poly:nth-child(even){transform:rotate(2deg);}
+.poly .pic{width:100%;aspect-ratio:4/5;border-radius:2px;background:var(--blush);object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--deeprose);}
+.poly .pic img{width:100%;height:100%;object-fit:cover;border-radius:2px;}
+.poly .cap{position:absolute;bottom:14px;left:0;right:0;text-align:center;padding:0 10px;font-family:'Dancing Script',cursive;font-size:1.15rem;color:var(--soft);line-height:1.2;}
+
+/* reveal on scroll */
+.rev{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;}
+.rev.in{opacity:1;transform:none;}
+
+/* ===== reasons cards (her solos) ===== */
+.reasons{display:flex;flex-direction:column;gap:2rem;}
+.rcard{
+  display:flex;gap:1.1rem;align-items:center;background:#fff;
+  border:1px solid var(--blush);border-radius:20px;padding:1rem;
+  box-shadow:0 8px 28px rgba(194,96,122,.1);
+}
+.rcard:nth-child(even){flex-direction:row-reverse;text-align:right;}
+.rcard .rpic{width:120px;height:150px;flex-shrink:0;border-radius:14px;overflow:hidden;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:var(--deeprose);}
+.rcard .rpic img{width:100%;height:100%;object-fit:cover;}
+.rcard .rtxt .n{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);}
+.rcard .rtxt .t{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--text);margin-top:.3rem;}
+
+/* ===== gift (page 4) ===== */
+.gift-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.3rem;}
+.gift-box{
+  max-width:460px;width:100%;
+  background:linear-gradient(135deg,#fff8f5,#fce4ec,#fff8f5);background-size:200% 200%;
+  animation:shimmer 7s ease infinite;border:1px solid var(--rose);border-radius:24px;
+  padding:2.6rem 1.6rem;box-shadow:0 14px 45px rgba(194,96,122,.18);
+}
+@keyframes shimmer{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.gift-locked{cursor:pointer;}
+.gift-locked .em{font-size:3.8rem;display:inline-block;animation:wiggle 1.6s ease infinite;}
+@keyframes wiggle{0%,100%{transform:rotate(-9deg);}50%{transform:rotate(9deg);}}
+.gift-locked .hint{font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--deeprose);margin-top:.5rem;}
+.gift-locked .tap{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-top:.5rem;}
+.gift-reveal{display:none;}
+.gift-reveal.on{display:block;animation:pageIn .7s ease;}
+.pb-strip{background:#fff;padding:12px 12px 40px;border-radius:3px;box-shadow:0 14px 45px rgba(194,96,122,.3);display:inline-block;max-width:210px;width:100%;margin:0 auto 1.8rem;position:relative;transform:rotate(-2deg);}
+.pb-strip img{width:100%;display:block;border-radius:2px;}
+.pb-strip .pb-ph{aspect-ratio:1/3;background:var(--blush);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2.4rem;color:var(--deeprose);}
+.pb-strip .pb-ph span{font-size:.58rem;letter-spacing:.1em;margin-top:.5rem;line-height:1.5;}
+.pb-strip .pb-cap{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:'Dancing Script',cursive;font-size:1rem;color:var(--soft);}
+.gift-reveal .mtext{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;line-height:2;color:var(--text);white-space:pre-wrap;}
+.gift-reveal .msig{margin-top:1.6rem;font-family:'Dancing Script',cursive;font-size:1.4rem;color:var(--deeprose);}
+
+/* ===== music bar ===== */
+#mbar{position:fixed;bottom:1.2rem;right:1.2rem;z-index:120;display:flex;align-items:center;gap:.55rem;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border:1px solid var(--rose);
+  border-radius:50px;padding:.45rem .9rem;box-shadow:0 4px 20px rgba(194,96,122,.2);cursor:pointer;}
+#mbar .disc{width:24px;height:24px;border-radius:50%;background:radial-gradient(circle,#fff 18%,var(--deeprose) 20%);box-shadow:0 0 0 2px var(--rose);animation:spin 3s linear infinite;animation-play-state:paused;}
+#mbar.playing .disc{animation-play-state:running;}
+@keyframes spin{to{transform:rotate(360deg);}}
+#mbar .sname{font-size:.63rem;color:var(--deeprose);max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* ===== floating fx ===== */
+.fx{position:fixed;pointer-events:none;z-index:1;bottom:-30px;}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0);opacity:0;}10%{opacity:.6;}90%{opacity:.2;}100%{transform:translateY(-110vh) rotate(360deg);opacity:0;}}
+.sparkle{position:fixed;pointer-events:none;z-index:150;animation:spk 1s ease forwards;}
+@keyframes spk{0%{transform:scale(0) rotate(0);opacity:1;}100%{transform:scale(1.4) rotate(40deg) translateY(-26px);opacity:0;}}
+.confetti{position:fixed;width:9px;height:9px;top:-20px;pointer-events:none;z-index:100001;border-radius:2px;animation:cf linear forwards;}
+@keyframes cf{0%{transform:translateY(0) rotate(0) translateX(0);opacity:1;}100%{transform:translateY(110vh) rotate(720deg) translateX(var(--cx));opacity:0;}}
